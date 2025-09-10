@@ -1,0 +1,17 @@
+Vehicle Damage Assessment  
+
+https://www.kaggle.com/datasets/pacificrm/car-insurance-fraud-detection
+
+Auto Insurers lose billions of dollars in fraudulent claims. Problem Statement : The Dataset provides a collection of labeled images related to car insurance claims, aiming to help identify fraudulent submissions. Build a neural networks model to distinguish between legitimate and deceptive claims
+
+Build a predictive model which can flag potential fraudulent vehicle damage claims for further review. This accelerates claim processing, enhances risk management, and helps insurers reduce losses due to false or misleading claims.
+
+Classification
+
+Team:
+SARVESH PRAKASH KOKATNUR -- 22BTRCL138
+SHAILY SHAH -- 22BTRCL140
+SHAROFF SANJAY SOHAN -- 22BTRCL142
+SIMHAM NAVYA SREE -- 22BTRCL146
+SURAJ J -- 22BTRCL153
+SURUVU SREEVARDHAN -- 22BTRCL154
