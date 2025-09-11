@@ -97,11 +97,11 @@ for img_path in test_images:
         axes[0, 1].set_title('Canny Edge Detection')
         axes[0, 1].axis('off')
         
-        # CNN learned filters
-        for i in range(6):
-            row = i // 4
-            col = (i % 4) + (2 if row == 0 else 0)
+        # CNN learned filters (fill remaining slots in 2x4 grid)
+        filter_positions = [(0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)]
+        for i in range(min(6, len(filter_positions))):
             if i < first_conv_output.shape[-1]:
+                row, col = filter_positions[i]
                 axes[row, col].imshow(first_conv_output[:, :, i], cmap='viridis')
                 axes[row, col].set_title(f'CNN Filter {i+1}')
                 axes[row, col].axis('off')

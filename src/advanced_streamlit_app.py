@@ -16,6 +16,10 @@ import json
 from datetime import datetime
 import seaborn as sns
 
+# Configure TensorFlow to reduce warnings
+tf.get_logger().setLevel('ERROR')
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 # Page configuration
 st.set_page_config(
     page_title="Advanced CNN Fraud Detection",
@@ -153,6 +157,10 @@ def highlight_detection_areas(image, heatmap, threshold=0.6):
     
     # Resize heatmap to image size
     heatmap_resized = cv2.resize(heatmap, (image.shape[1], image.shape[0]))
+    
+    # Fix NaN and clip values to valid range
+    heatmap_resized = np.nan_to_num(heatmap_resized, nan=0.0)
+    heatmap_resized = np.clip(heatmap_resized, 0, 1)
     
     # Create colored heatmap
     heatmap_colored = cv2.applyColorMap(
@@ -429,6 +437,9 @@ def main():
                         with col2:
                             st.write("**Overlay on Original**")
                             heatmap_resized = cv2.resize(heatmap, (image_resized.shape[1], image_resized.shape[0]))
+                            # Fix NaN and clip values to valid range
+                            heatmap_resized = np.nan_to_num(heatmap_resized, nan=0.0)
+                            heatmap_resized = np.clip(heatmap_resized, 0, 1)
                             heatmap_colored = cv2.applyColorMap(
                                 (heatmap_resized * 255).astype(np.uint8), 
                                 cv2.COLORMAP_JET

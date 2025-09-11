@@ -498,6 +498,16 @@ def main():
     print("Model Architecture:")
     model.summary()
     
+    # Calculate class weights to handle imbalance
+    from sklearn.utils.class_weight import compute_class_weight
+    class_weights = compute_class_weight(
+        'balanced',
+        classes=np.unique(y_train),
+        y=y_train
+    )
+    class_weight_dict = {i: class_weights[i] for i in range(len(class_weights))}
+    print(f"\nClass weights (to handle imbalance): {class_weight_dict}")
+    
     # Training with callbacks
     callbacks = [
         keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True),
@@ -511,6 +521,7 @@ def main():
         batch_size=BATCH_SIZE,
         epochs=EPOCHS,
         validation_data=(X_test, y_test_categorical),
+        class_weight=class_weight_dict,
         callbacks=callbacks,
         verbose=1
     )
