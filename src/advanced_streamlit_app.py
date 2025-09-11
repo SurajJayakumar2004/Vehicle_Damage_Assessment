@@ -267,11 +267,11 @@ def display_layer_visualizations(layer_outputs):
             with col1:
                 st.metric("Output Shape", f"{output.shape}")
             with col2:
-                st.metric("Active Filters", f"{np.sum(np.max(output, axis=(0,1)) > 0.1)}")
+                st.metric("Active Filters", f"{int(np.sum(np.max(output, axis=(0,1)) > 0.1))}")
             with col3:
-                st.metric("Max Activation", f"{np.max(output):.3f}")
+                st.metric("Max Activation", f"{float(np.max(output)):.3f}")
             with col4:
-                st.metric("Mean Activation", f"{np.mean(output):.3f}")
+                st.metric("Mean Activation", f"{float(np.mean(output)):.3f}")
 
 def main():
     # Header
@@ -362,7 +362,7 @@ def main():
                 prediction = model.predict(np.expand_dims(image_normalized, axis=0), verbose=0)[0]
                 predicted_class_idx = np.argmax(prediction)
                 predicted_class = CLASSES[predicted_class_idx]
-                confidence = prediction[predicted_class_idx]
+                confidence = float(prediction[predicted_class_idx])
                 
                 # Display prediction results
                 st.subheader("🎯 CNN Prediction Results")
@@ -374,13 +374,13 @@ def main():
                     conf_class = "confidence-high" if confidence > 0.8 else "confidence-medium" if confidence > 0.6 else "confidence-low"
                     st.markdown(f'<p class="{conf_class}">Confidence: {confidence:.1%}</p>', unsafe_allow_html=True)
                 with col3:
-                    fraud_prob = prediction[0]
+                    fraud_prob = float(prediction[0])
                     st.metric("Fraud Probability", f"{fraud_prob:.1%}")
                 
                 # Probability bars
                 st.write("**Class Probabilities:**")
                 for i, (class_name, prob) in enumerate(zip(CLASSES, prediction)):
-                    st.progress(prob, text=f"{class_name}: {prob:.1%}")
+                    st.progress(float(prob), text=f"{class_name}: {prob:.1%}")
                 
                 # Create tabs for different analyses
                 tab1, tab2, tab3, tab4, tab5 = st.tabs([
