@@ -1,0 +1,7 @@
+{
+  "optimal_threshold": 0.6000000000000002,
+  "precision_fraud": 0.06985871271585557,
+  "recall_fraud": 0.956989247311828,
+  "f1_fraud": 0.13021214337966347,
+  "model_description": "EfficientNetV2-B0 trained on balanced dataset for fraud detection"
+}

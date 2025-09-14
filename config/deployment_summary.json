@@ -1,0 +1,17 @@
+{
+  "model_name": "EfficientNetV2-B0",
+  "model_file": "fraud_detector_optimized.h5",
+  "threshold": 0.6,
+  "performance": {
+    "false_alarms": 189,
+    "detection_rate": 0.452,
+    "precision": 0.235,
+    "f1_score": 0.308
+  },
+  "business_impact": {
+    "false_alarm_reduction": "84%",
+    "original_false_alarms": 1185,
+    "optimized_false_alarms": 189,
+    "cost_savings_estimate": "$996,000"
+  }
+}

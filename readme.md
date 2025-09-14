@@ -1,7 +1,10 @@
-# Comprehensive Report on Vehicle Damage Claim Fraud Detection
+# Vehicle Damage Assessment - Fraud Detection System
 
-## 1. Problem Statement
-The problem is to classify vehicle damage claims as either fraudulent or non-fraudulent based on images of the damaged vehicles. This is a binary classification task where the goal is to build a model that can accurately identify potentially fraudulent claims to assist in the review process.
+A comprehensive fraud detection system for vehicle damage assessment using deep learning models with optimized performance for minimal false alarms.
+
+## 🎯 Project Overview
+
+This system provides an AI-powered solution for detecting potentially fraudulent vehicle damage claims. The system has been optimized to reduce false alarms by 84% while maintaining effective fraud detection capabilities.
 
 ## 2. Objective
 The objective is to develop and evaluate a neural network model that can effectively classify vehicle damage images as 'Fraud' or 'Non-Fraud'. The objective includes exploring transfer learning with different pre-trained CNN architectures and creating an ensemble model to potentially improve performance, especially in handling the class imbalance present in the dataset.

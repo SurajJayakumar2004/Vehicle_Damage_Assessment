@@ -1,0 +1,21 @@
+FRAUD DETECTION MODEL - FINAL PERFORMANCE SUMMARY
+=======================================================
+
+Model: EfficientNetV2-B0 Fine-tuned for Fraud Detection
+Optimal Threshold: 0.600
+
+BUSINESS IMPACT:
+- False Alarms: 1185 cases
+- False Alarm Rate: 89.6% of legitimate claims
+- Fraud Detection Rate: 95.7% of fraud cases caught
+- Fraud Cases Detected: 89
+- Fraud Cases Missed: 4
+
+TECHNICAL METRICS:
+- Precision: 0.070
+- Recall: 0.957
+- F1-Score: 0.130
+
+BUSINESS INTERPRETATION:
+❌ HIGH FALSE ALARM RATE - May overwhelm investigation team
+✅ HIGH FRAUD DETECTION - Excellent coverage

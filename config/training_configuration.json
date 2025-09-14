@@ -1,0 +1,23 @@
+{
+  "dataset": {
+    "total_samples": "Balanced dataset created",
+    "train_samples": "Training set with 2:1 ratio",
+    "val_samples": "Validation set with 2:1 ratio",
+    "test_samples": 1416,
+    "class_ratio": "2:1 (Non-fraud:Fraud)",
+    "balancing_method": "Strategic undersampling"
+  },
+  "training_approach": {
+    "method": "Two-phase transfer learning",
+    "phase1": "Frozen base model (10 epochs)",
+    "phase2": "Fine-tuning with unfrozen layers (15 epochs)",
+    "optimizer": "Adam with ReduceLROnPlateau",
+    "class_weights": "Calculated from balanced dataset"
+  },
+  "optimization": {
+    "threshold_method": "Micro-threshold grid search",
+    "threshold_range": "0.55-0.65 (fine-grained)",
+    "scoring": "Multi-criteria (detection + F1 - false_alarms/1000)",
+    "business_focus": "False alarm minimization"
+  }
+}

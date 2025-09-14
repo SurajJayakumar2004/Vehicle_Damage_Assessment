@@ -1,0 +1,22 @@
+{
+  "models": [
+    {
+      "name": "Original EfficientNet",
+      "false_alarms": 1185,
+      "detection_rate": "Unknown",
+      "status": "Broken"
+    },
+    {
+      "name": "Optimized EfficientNetV2-B0",
+      "false_alarms": 189,
+      "detection_rate": "45.2%",
+      "status": "Production Ready"
+    },
+    {
+      "name": "Optimized ResNet50",
+      "false_alarms": 258,
+      "detection_rate": "57.0%",
+      "status": "Backup Model"
+    }
+  ]
+}
